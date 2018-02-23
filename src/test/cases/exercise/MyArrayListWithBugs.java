@@ -34,7 +34,6 @@ public class MyArrayListWithBugs {
             throw new IndexOutOfBoundsException("Error (get): Invalid index"
                     + index);
         }
-
         return list[index];
     }
 

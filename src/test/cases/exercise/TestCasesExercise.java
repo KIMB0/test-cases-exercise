@@ -14,6 +14,10 @@ public class TestCasesExercise {
 
     public static void main(String[] args) {
         MyArrayListWithBugs malwb = new MyArrayListWithBugs();
+        Object Object = "hvad";
+        malwb.add(Object);
+        malwb.size();
+        malwb.get(0);
    }
     
 }
