@@ -42,12 +42,16 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testAdd_Object() {
-        System.out.println("add");
+        System.out.println("object should be added");
         Object o = null;
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
+        int expResult = 0;
+        int result = instance.size();
+        assertEquals(expResult, result);
         instance.add(o);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        expResult = 1;
+        int result2 = instance.size();
+        assertEquals(expResult, result2);
     }
 
     /**
@@ -55,13 +59,11 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testSize() {
-        System.out.println("size");
+        System.out.println("size should be 0");
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
         int expResult = 0;
         int result = instance.size();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
