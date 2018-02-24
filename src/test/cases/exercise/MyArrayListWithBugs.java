@@ -15,6 +15,7 @@ public class MyArrayListWithBugs {
     public void add(Object o) {
         // check capacity
         if (list.length <= nextFree) {
+            System.out.println("===== Getting longer list! =====");
             list = getLongerList();
         }
 
@@ -30,7 +31,7 @@ public class MyArrayListWithBugs {
     // Returns a reference to the object at position index
     // Throws IndexOutOfBoundsException
     public Object get(int index) {
-        if (index <= 0 || nextFree < index) {
+        if (index < 0 || nextFree < index) {
             throw new IndexOutOfBoundsException("Error (get): Invalid index"
                     + index);
         }
@@ -67,7 +68,6 @@ public class MyArrayListWithBugs {
             throw new IndexOutOfBoundsException("Error (remove): Invalid index"
                     + index);
         }
-
         // Shift elements down to fill indexed position
         // Start with first element
         for (int i = index; i < nextFree - 1; i++) {

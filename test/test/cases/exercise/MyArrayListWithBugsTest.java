@@ -42,7 +42,7 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testAdd_Object() {
-        System.out.println("object should be added");
+        System.out.println("Object should be added");
         Object o = null;
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
         int expResult = 0;
@@ -59,7 +59,7 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testSize() {
-        System.out.println("size should be 0");
+        System.out.println("Size should be 0");
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
         int expResult = 0;
         int result = instance.size();
@@ -71,14 +71,13 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testGet() {
-        System.out.println("get");
+        System.out.println("Get index number 0");
         int index = 0;
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
         Object expResult = null;
+        instance.add(expResult);
         Object result = instance.get(index);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -86,13 +85,11 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testAdd_int_Object() {
-        System.out.println("add");
+        System.out.println("Add object at index 0");
         int index = 0;
         Object o = null;
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
         instance.add(index, o);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -100,14 +97,14 @@ public class MyArrayListWithBugsTest {
      */
     @Test
     public void testRemove() {
-        System.out.println("remove");
+        System.out.println("Remove object at index 0");
         int index = 0;
         MyArrayListWithBugs instance = new MyArrayListWithBugs();
-        Object expResult = null;
-        Object result = instance.remove(index);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Object object = null;
+        instance.add(object);
+        instance.remove(index);
+        int expectedRes = instance.size();
+        assertEquals(expectedRes, index);
     }
     
 }
